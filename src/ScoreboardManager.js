@@ -125,7 +125,7 @@ class ScoreboardManager
   //Takes user input, adds the score which is passed
   //to the function along with a userID which is created
   //To the leaderboardd as an object in the form {name: "Aaron", score:100, playerID:1}
-  addToBoard()
+  addToBoard(score)
   {
     this.stopTimer();
 
@@ -133,16 +133,16 @@ class ScoreboardManager
     {
       var seconds = this.getTimeSeconds()
       var time = this.getDisplayTimer()
-      //var spm = this.getScorePerMin(score)
+      var spm = this.getScorePerMin(score)
       while (this.playerName === "" || this.playerName == null || this.playerName.length > 7)
       {
           this.playerName = prompt ("Please enter your name less than 7 charachters","");
       }
         this.playerID = this.scoreboard.length + 1;
         var object = {name: this.playerName,
-                    //  score: score,
+                      score: score,
                       time: time,
-                    //  spm: spm,
+                      spm: spm,
                       seconds: seconds,
                       playerID: this.playerID}
 
