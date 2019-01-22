@@ -18,26 +18,25 @@ table {
   margin-left:50px; text-align:center; border-collapse:collapse;
   position: absolute;}
 td, th {padding:5px; }
-th {color:white; background-color:blue; font-family:Arial, Helvetica, sans-serif;}
+th {color:white; background-color:blue; font-family:Arial,sans-serif;}
 tr:nth-child(even) {background: #CCC}
 .tableheader{
 
 }
 .test{
-
+		font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    width: 80%;
-    height: 80%;
+    height: 75%;
     text-align: center;
-    font-size: 4vw;
+    font-size: 4vh;
     z-index: 10;
 
     position: absolute;
-    padding-top: 5%;
+    padding-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
+    left: 30%;
+    right: 35%;
     display: none;
     overflow-y: scroll;
 

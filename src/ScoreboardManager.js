@@ -227,6 +227,8 @@ class ScoreboardManager
       tablecontents += "<td>" + "Pos" + "</td>";
       tablecontents += "<td>" + "Name"+ "</td>";
       tablecontents += "<td>" + "Time" + "</td>";
+      tablecontents += "<td>" + "Score"+ "</td>";
+      tablecontents += "<td>" + "SPM" + "</td>";
       tablecontents += "</tr>";
 
       for (var i = 0; i < this.scoreboard.length; i ++)
@@ -236,8 +238,8 @@ class ScoreboardManager
         tablecontents += "<td>" + pos + "</td>";
         tablecontents += "<td>" + this.scoreboard[i].name + "</td>";
         tablecontents += "<td>" + this.scoreboard[i].time + "</td>";
-        //tablecontents += "<td>" + this.scoreboard[i].score + "</td>";
-        //tablecontents += "<td>" + this.scoreboard[i].spm + "</td>";
+        tablecontents += "<td>" + this.scoreboard[i].score + "</td>";
+        tablecontents += "<td>" + this.scoreboard[i].spm + "</td>";
         tablecontents += "</tr>";
      }
      tablecontents += "</table>";
