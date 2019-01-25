@@ -1,7 +1,6 @@
 body {
 	background-color:white;
 }
-
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -18,28 +17,30 @@ table {
   margin-left:50px; text-align:center; border-collapse:collapse;
   position: absolute;}
 td, th {padding:5px; }
-th {color:white; background-color:blue; font-family:Arial,sans-serif;}
-tr:nth-child(even) {background: white}
+th {color:white; background-color:blue; font-family:'5px Adventure Regular';;}
+tr:nth-child(even) {background: #CCC}
 .tableheader{
 
 }
 .test{
-		font-family: Adventure, Helvetica, sans-serif;
+
     margin: auto;
-    height: 75%;
+    width: 100%;
+    height: 80%;
     text-align: center;
-    font-size: 4vh;
+    font-size: 3vw;
     z-index: 10;
 
     position: absolute;
+    padding-top: 5%;
     margin-left: auto;
     margin-right: auto;
-		padding-left: 9%;
-		top: 10%;
-    left: 25%;
-    right: 25%;
+    left: 0;
+    right: 0;
     display: none;
-    overflow-y: scroll;
+    overflow-y:auto;
+    overflow-x:hidden;
+    font-family:'10px Adventure Regular', Adventure;
 
 
 }
