@@ -19,12 +19,20 @@ table {
   position: absolute;}
 td, th {padding:5px; }
 th {color:white; background-color:blue; font-family:Arial,sans-serif;}
+<<<<<<< HEAD
 tr:nth-child(even) {background: white}
+=======
+tr:nth-child(even) {background: #CCC}
+>>>>>>> b2912f67ce536221d2fee1ba6157551c8e9d322b
 .tableheader{
 
 }
 .test{
+<<<<<<< HEAD
 		font-family: Adventure, Helvetica, sans-serif;
+=======
+		font-family: Arial, Helvetica, sans-serif;
+>>>>>>> b2912f67ce536221d2fee1ba6157551c8e9d322b
     margin: auto;
     height: 75%;
     text-align: center;
@@ -32,12 +40,20 @@ tr:nth-child(even) {background: white}
     z-index: 10;
 
     position: absolute;
+<<<<<<< HEAD
     margin-left: auto;
     margin-right: auto;
 		padding-left: 9%;
 		top: 10%;
     left: 25%;
     right: 25%;
+=======
+    padding-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30%;
+    right: 35%;
+>>>>>>> b2912f67ce536221d2fee1ba6157551c8e9d322b
     display: none;
     overflow-y: scroll;
 

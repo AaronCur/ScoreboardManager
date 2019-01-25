@@ -227,6 +227,8 @@ class ScoreboardManager
       tablecontents += "<td>" + "Pos" + "</td>";
       tablecontents += "<td>" + "Name"+ "</td>";
       tablecontents += "<td>" + "Time" + "</td>";
+      tablecontents += "<td>" + "Score"+ "</td>";
+      tablecontents += "<td>" + "SPM" + "</td>";
       tablecontents += "</tr>";
 
       for (var i = 0; i < this.scoreboard.length; i ++)
