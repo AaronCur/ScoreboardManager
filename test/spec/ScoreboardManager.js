@@ -52,7 +52,7 @@ describe('ScoreboardManager()', function () {
     expect(array[0].playerID).to.equal(1);
   });
 
-  it('Filter by time ', function () {
+  it('Filter by time low-high ', function () {
     var scoreboard = new ScoreboardManager
     var object = {name: "Jack",
                   score: 150,
@@ -70,13 +70,36 @@ describe('ScoreboardManager()', function () {
                   playerID: 2}
     scoreboard.scoreboard.push(object2);
 
-    scoreboard.filterSPM(1);
+    scoreboard.filterTime(1);
     var array = scoreboard.getBoard();
 
     expect(array[0].playerID).to.equal(2);
   });
+  it('Filter by time high-low ', function () {
+    var scoreboard = new ScoreboardManager
+    var object = {name: "Jack",
+                  score: 150,
+                  time: "00:30",
+                  spm: 200,
+                  seconds: 30,
+                  playerID: 1}
 
-  it('Filter by score ', function () {
+    scoreboard.scoreboard.push(object);
+    var object2 = {name: "Aaron",
+                  score: 100,
+                  time: "00:24",
+                  spm: 122,
+                  seconds: 24,
+                  playerID: 2}
+    scoreboard.scoreboard.push(object2);
+
+    scoreboard.filterTime(-1);
+    var array = scoreboard.getBoard();
+
+    expect(array[0].playerID).to.equal(1);
+  });
+
+  it('Filter by score low-high', function () {
     var scoreboard = new ScoreboardManager
     var object = {name: "Jack",
                   score: 150,
@@ -102,7 +125,33 @@ describe('ScoreboardManager()', function () {
     expect(array[0].playerID).to.equal(2);
   });
 
-  it('Filter by spm ', function () {
+  it('Filter by score high-low ', function () {
+    var scoreboard = new ScoreboardManager
+    var object = {name: "Jack",
+                  score: 150,
+                  time: "00:30",
+                  spm: 200,
+                  seconds: 30,
+                  playerID: 1}
+
+    scoreboard.scoreboard.push(object);
+    var object2 = {name: "Aaron",
+                  score: 100,
+                  time: "00:24",
+                  spm: 122,
+                  seconds: 24,
+                  playerID: 2}
+    scoreboard.scoreboard.push(object2);
+
+    scoreboard.filterScore(-1);
+    var array = scoreboard.getBoard()
+
+    console.log(array)
+
+    expect(array[0].playerID).to.equal(1);
+  });
+
+  it('Filter by spm high-low', function () {
     var scoreboard = new ScoreboardManager
     var object = {name: "Jack",
                   score: 150,
@@ -126,8 +175,7 @@ describe('ScoreboardManager()', function () {
     expect(array[0].playerID).to.equal(1);
   });
 
-
-  it('Filter by name ', function () {
+  it('Filter by spm low-high ', function () {
     var scoreboard = new ScoreboardManager
     var object = {name: "Jack",
                   score: 150,
@@ -145,13 +193,19 @@ describe('ScoreboardManager()', function () {
                   playerID: 2}
     scoreboard.scoreboard.push(object2);
 
-    scoreboard.filterName("Aaron");
+    scoreboard.filterSPM(1);
     var array = scoreboard.getBoard();
 
-    console.log(array);
-
-    expect(array[0].name).to.equal("Aaron");
+    expect(array[0].playerID).to.equal(2);
   });
+
+  it('Generate Table', function () {
+    var scoreboard = new ScoreboardManager()
+    expect(scoreboard.generate_table).to.be.a('function');
+
+  });
+
+
 
   // Add more assertions here
 });

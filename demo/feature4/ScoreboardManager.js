@@ -4,7 +4,7 @@ class ScoreboardManager
   {
     this.windowWidth = window.innerWidth;
     this.windowHeight = window.innerHeight;
-    this.scoreboard =  []
+    this.scoreboard = []
     this.count = 0
     this.playerName = ""
     this.session = false
@@ -26,7 +26,6 @@ class ScoreboardManager
   startTimer(){
     this.timerActive = true;
     this.beginDate = new Date();
-    console.log(this.beginDate.getTime())
 
   }
   stopTimer(){
@@ -166,11 +165,13 @@ class ScoreboardManager
     return this.scoreboard
   }
 
-  filterName(name)
+  filterName(val)
   {
-    this.scoreboard.filter(function(scoreboard)
+    this.scoreboard.filter(function(val)
     {
-      return (scoreboard.name == name);
+
+      console.log(scoreboard.name == val)
+
     })
 
   }
@@ -190,8 +191,6 @@ class ScoreboardManager
 
   filterScore(val)
   {
-    //Filter
-    //var byTime = this.scoreboard.slice(0)
 
     this.scoreboard.sort(function(a,b){
 
@@ -206,7 +205,7 @@ class ScoreboardManager
 
   filterSPM(val)
   {
-    //Filter
+
     this.scoreboard.sort(function(a,b){
       if(val === 1){
         return a.spm - b.spm
@@ -227,6 +226,8 @@ class ScoreboardManager
       tablecontents += "<td>" + "Pos" + "</td>";
       tablecontents += "<td>" + "Name"+ "</td>";
       tablecontents += "<td>" + "Time" + "</td>";
+      tablecontents += "<td>" + "Score"+ "</td>";
+      tablecontents += "<td>" + "SPM" + "</td>";
       tablecontents += "</tr>";
 
       for (var i = 0; i < this.scoreboard.length; i ++)
@@ -236,16 +237,14 @@ class ScoreboardManager
         tablecontents += "<td>" + pos + "</td>";
         tablecontents += "<td>" + this.scoreboard[i].name + "</td>";
         tablecontents += "<td>" + this.scoreboard[i].time + "</td>";
-        //tablecontents += "<td>" + this.scoreboard[i].score + "</td>";
-        //tablecontents += "<td>" + this.scoreboard[i].spm + "</td>";
+        tablecontents += "<td>" + this.scoreboard[i].score + "</td>";
+        tablecontents += "<td>" + this.scoreboard[i].spm + "</td>";
         tablecontents += "</tr>";
      }
      tablecontents += "</table>";
      document.getElementById("table").style.display = "block";
      document.getElementById("table").style.fontfamily = '55px Adventure Regular';
      document.getElementById("table").innerHTML=tablecontents;
-
-
 
 }
 }

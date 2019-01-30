@@ -2,43 +2,61 @@ class Game
 {
   constructor()
   {
-    gameNs.scoreboard = new ScoreboardManager();
-    gameNs.scoreboard = new ScoreboardManager();
-    gameNs.scoreboard.startTimer();
-    gameNs.scoreboard.clearSessionStorage();
-    gameNs.scoreboard.initBoard("local");
-    this.score = 50;
-    gameNs.scoreboard.addToBoard(this.score);
-    //gameNs.scoreboard.filterName("jack");
-    //gameNs.scoreboard.filterTime(-1);
-    //gameNs.scoreboard.filterScore(-1);
-    gameNs.scoreboard.filterSPM(-1);
 
-    console.log(gameNs.scoreboard.getBoard());
+
+    gameNs.scoreboard1 = new ScoreboardManager();
+    gameNs.scoreboard1.initBoard("session");
+    gameNs.scoreboard1.startTimer();
+
+    this.score = 50;
+
+    gameNs.output = true;
+
 
   }
   update(){
-    // window.requestAnimationFrame(gameNs.game.update);
-    //gameNs.scoreboard.getDisplayTimer();
+     window.requestAnimationFrame(gameNs.game.update);
 
-    //if(gameNs.scoreboard.getDisplayTimer() == "00:02"){
+     gameNs.time = gameNs.scoreboard1.getDisplayTimer();
 
-    //  gameNs.scoreboard.addToBoard(50);
-    //  gameNs.scoreboard.filterTime(1);
-    //  gameNs.scoreboard.generate_table()
+
+     if(gameNs.time == "00:02"){
+       gameNs.scoreboard1.addToBoard(100);
+
+       if(gameNs.output == true)
+       {
+
+              console.log("Filter by SPM Low-High");
+              gameNs.scoreboard1.filterSPM(-1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+              console.log("Filter by SPM Low-High");
+              gameNs.scoreboard1.filterSPM(-1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+              console.log("Filter by Score High-Low");
+              gameNs.scoreboard1.filterScore(-1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+              console.log("Filter by Score Low-High");
+              gameNs.scoreboard1.filterScore(1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+              console.log("Filter by Time Low-High");
+              gameNs.scoreboard1.filterTime(1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+              console.log("Filter by Time High-Low");
+              gameNs.scoreboard1.filterTime(-1);
+              console.log(gameNs.scoreboard1.getBoard());
+
+         gameNs.output = false;
+       }
+     }
+
 
     }
 
-    var canvas = document.createElement("mycanvas");
-    var ctx = mycanvas.getContext("2d");
-    document.body.style.background = "#ffffff";
-    ctx.fillStyle ='white';
-    ctx.font = '55px Adventure Regular';
-    ctx.strokeStyle = 'black';
-    ctx.fillText(this.time,100,100);
-    ctx.strokeText(this.time,100,100);
 
 
-
-  }
 }
